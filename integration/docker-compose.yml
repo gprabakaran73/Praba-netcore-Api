@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  praba-api:
+    image: praba-registry:55000/praba-api:ci-${GENERATOR_BUILD_NUMBER-10}
+    #ports:
+    #  - "8080:80"
+  mail:
+    image: mailhog/mailhog
+    #ports:
+    #  - "8025:8025"
+  integration:
+    image: praba-registry:55000/praba-api:integration-${BUILD_NUMBER-10}
+    build: .
+    environment:
+      - TEAMCITY_PROJECT_NAME"

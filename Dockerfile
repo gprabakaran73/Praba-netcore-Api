@@ -14,7 +14,8 @@ RUN dotnet restore test/test.csproj
 COPY . .
 
 # test
-ENV TEAMCITY_PROJECT_NAME=fake
+#ENV TEAMCITY_PROJECT_NAME=fake
+ENV TEAMCITY_PROJECT_NAME=Praba Netcore Api
 RUN dotnet test test/test.csproj
 
 # publish

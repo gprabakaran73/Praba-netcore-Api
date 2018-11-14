@@ -14,3 +14,4 @@ services:
     build: .
     environment:
       - TEAMCITY_PROJECT_NAME
+      - TEAMCITY_PROJECT_NAME=fake

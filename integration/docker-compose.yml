@@ -13,4 +13,4 @@ services:
     image: praba-registry:55000/praba-api:integration-${BUILD_NUMBER-10}
     build: .
     environment:
-      - TEAMCITY_PROJECT_NAME=Praba Netcore Api
+      TEAMCITY_PROJECT_NAME:fake

@@ -1,0 +1,10 @@
+ version: '3'
+
+services:
+  generator:
+    image: praba-registry:55000/praba-api:ci-${PRABAAPI_BUILD_NUMBER-14}
+    ports:
+      - "${PORT_GENERATOR-80}:80"
+    environment:
+      MAILSERVER__HOST: my-prod-mailserver
+      MAILSERVER__PORT: 25

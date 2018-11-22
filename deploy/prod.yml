@@ -5,9 +5,6 @@ services:
     image: praba-registry:55000/praba-api:ci-${PRABAAPI_BUILD_NUMBER-14}
     ports:
       - "${PORT_GENERATOR-80}:80"
-<<<<<<< HEAD
     environment:
       MAILSERVER__HOST: praba-prod-mailserver
       MAILSERVER__PORT: 25
-=======
->>>>>>> 604b8125b0b18a55d20793489880bde7e47aab56

@@ -30,8 +30,10 @@ namespace api
                 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "Generate Random Data API", Version = "v1" });
+                c.SwaggerDoc("v1", new Info { Title = "New2 Generate Random Data API", Version = "v1" });
             });
+
+            services.Configure<MailServerConfig>(Configuration.GetSection("mailserver"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +50,9 @@ namespace api
             var redirectRootToSwagger = new RewriteOptions()
                 .AddRedirect("^$", "swagger");
             app.UseRewriter(redirectRootToSwagger);
+
+            var mailServerConfig = mailServerConfigAccessor.Value;
+            Console.WriteLine($"Mail server: {mailServerConfig.Host}:{mailServerConfig.Port}");
         }
     }
 }
